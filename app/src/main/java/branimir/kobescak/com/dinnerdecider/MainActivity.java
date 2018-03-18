@@ -11,11 +11,11 @@ import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity {
 
-    Globals globalDB = new Globals();
+    private Globals globalDB = new Globals();
 
-    DatabaseHelper myDB;
-    ImageButton addButton, next, previous, call;
-    TextView food, price;
+    private DatabaseHelper myDB;
+    private ImageButton addButton, next, previous, call;
+    private TextView food, price;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -40,7 +40,7 @@ public class MainActivity extends AppCompatActivity {
         addButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(MainActivity.this, addContent.class);
+                Intent intent = new Intent(MainActivity.this, AddFood.class);
                 startActivity(intent);
             }
         });
@@ -109,13 +109,13 @@ public class MainActivity extends AppCompatActivity {
     }
 
     //Display current data
-    public void currentData(int id) {
+    private void currentData(int id) {
         food.setText(myDB.getDataByID(globalDB.ID[id])[1]);
-        price.setText("Price: " + myDB.getDataByID(globalDB.ID[id])[2] + "kn");
+        price.setText("Price: " + myDB.getDataByID(globalDB.ID[id])[2]);
     }
 
     //Display the default TextView
-    public void defaultData() {
+    private void defaultData() {
         food.setText("FOOD_NAME");
         price.setText("Price:____");
     }

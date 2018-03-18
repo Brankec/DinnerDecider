@@ -23,7 +23,7 @@ import java.util.HashMap;
  * Created by Gejmer on 3/2/2018.
  */
 
-public class addContent extends AppCompatActivity {
+public class AddFood extends AppCompatActivity {
     Globals globalDB = new Globals();
 
     private static final String TAG = "List_at_Activity";
@@ -67,7 +67,7 @@ public class addContent extends AppCompatActivity {
                     phone_number.setText("");
                 }
                 else {
-                    Toast.makeText(addContent.this, "Please fill all the fields!", Toast.LENGTH_LONG).show();
+                    Toast.makeText(AddFood.this, "Please fill all the fields!", Toast.LENGTH_LONG).show();
                 }
                 globalDB.IDTemp = 0;
                 globalDB.ID = myDB.getIDList();
@@ -78,7 +78,7 @@ public class addContent extends AppCompatActivity {
         listBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(addContent.this, ListContent.class);
+                Intent intent = new Intent(AddFood.this, ListContent.class);
                 startActivity(intent);
             }
         });
@@ -124,7 +124,7 @@ public class addContent extends AppCompatActivity {
                     phone_number.setText("");
                 }
                 else {
-                    Toast.makeText(addContent.this, "Please enter the ID!", Toast.LENGTH_LONG).show();
+                    Toast.makeText(AddFood.this, "Please enter the ID!", Toast.LENGTH_LONG).show();
                 }
 
                 globalDB.IDTemp = 0;
@@ -142,7 +142,7 @@ public class addContent extends AppCompatActivity {
                     ID.setText("");
                 }
                 else {
-                    Toast.makeText(addContent.this, "Please enter the ID!", Toast.LENGTH_LONG).show();
+                    Toast.makeText(AddFood.this, "Please enter the ID!", Toast.LENGTH_LONG).show();
                 }
 
                 globalDB.IDTemp = 0;
@@ -156,10 +156,10 @@ public class addContent extends AppCompatActivity {
         boolean insertData = myDB.addData(food, price, company, phonenumber);
 
         if(insertData == true) {
-            Toast.makeText(addContent.this, "Successfully Entered Data", Toast.LENGTH_LONG).show();
+            Toast.makeText(AddFood.this, "Successfully Entered Data", Toast.LENGTH_LONG).show();
         }
         else {
-            Toast.makeText(addContent.this, "Something went wrong...", Toast.LENGTH_LONG).show();
+            Toast.makeText(AddFood.this, "Something went wrong...", Toast.LENGTH_LONG).show();
         }
     }
 }

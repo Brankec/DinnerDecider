@@ -16,9 +16,7 @@ import java.util.List;
  */
 
 public class ListContent extends AppCompatActivity {
-    DatabaseHelper myDB = new DatabaseHelper(this);
-
-    ListView listFood;
+    private DatabaseHelper myDB = new DatabaseHelper(this);
 
     private ExpandableListView listView;
     private ExpandableListAdapterClass listAdapter;
@@ -49,14 +47,13 @@ public class ListContent extends AppCompatActivity {
             listDataHeader.add(data.getString(1));
 
             List<String> info = new ArrayList<>();
-            info.add(data.getString(0));
-            info.add(data.getString(2));
-            info.add(data.getString(3));
-            info.add(data.getString(4));
+            info.add("id: " + data.getString(0));
+            info.add("price: " + data.getString(2));
+            info.add("company: " + data.getString(3));
+            info.add("phone number: " + data.getString(4));
 
             listHash.put(listDataHeader.get(index),info);
             index++;
         }
-        index = 0;
     }
 }
