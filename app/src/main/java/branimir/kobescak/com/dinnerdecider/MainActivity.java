@@ -56,7 +56,6 @@ public class MainActivity extends AppCompatActivity {
                 if (myDB.getDatalist().getCount() >= 1) {
                     dialContactPhone(globalDB.IDTemp);
                 }
-                //Toast.makeText(MainActivity.this, myDB.getDataByID(globalDB.ID[globalDB.IDTemp])[4].toString().length() + "", Toast.LENGTH_LONG).show();
             }
         });
 
@@ -122,8 +121,6 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void dialContactPhone(int id) {
-        //Toast.makeText(MainActivity.this, myDB.getDataByID(globalDB.ID[id])[4].length(), Toast.LENGTH_LONG).show();
         startActivity(new Intent(Intent.ACTION_DIAL, Uri.fromParts("tel", myDB.getDataByID(globalDB.ID[id])[4], null)));
-
     }
 }
